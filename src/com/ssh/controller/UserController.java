@@ -33,7 +33,7 @@ public class UserController {
 	@RequestMapping("/index")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("name", userService.queryUserName());
+		mv.addObject("users", userService.getAllUser());
 		mv.setViewName("user");
 		return mv;
 	}
@@ -42,9 +42,8 @@ public class UserController {
 	public ModelAndView add(@RequestParam("code") String code, @RequestParam("name") String name) {
 		User user = new User(code, name);
 
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("name", userService.addNewUser(user));
-		mv.setViewName("user");
+		ModelAndView mv = new ModelAndView("success");
+		mv.addObject("id", userService.addNewUser(user));
 		return mv;
 	}
 }

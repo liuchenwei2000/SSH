@@ -3,6 +3,8 @@
  */
 package com.ssh.service;
 
+import java.util.List;
+
 import com.ssh.vo.User;
 
 /**
@@ -16,7 +18,7 @@ import com.ssh.vo.User;
  */
 public interface IUserService {
 
-	public String queryUserName();
+	public List<User> getAllUser();
 	
 	public String addNewUser(User user);
 }

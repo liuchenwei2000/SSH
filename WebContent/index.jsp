@@ -16,8 +16,10 @@
 		<p>
 			用户名称： <input type="text" name="name">
 		<p>
-			&nbsp;&nbsp; <a href="user/index"> 查询已有账号 </a> &nbsp;&nbsp; 
+		<a href="user/index"> 查询已有账号 </a> &nbsp;&nbsp; 
 		<input type="Submit" value="提  交" />
 	</form>
+	<p>
+	<a href="freemarker/index">Test FreeMarker</a>
 </body>
 </html>

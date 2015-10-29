@@ -3,6 +3,8 @@
  */
 package com.ssh.dao;
 
+import java.util.List;
+
 import com.ssh.vo.User;
 
 /**
@@ -16,7 +18,7 @@ import com.ssh.vo.User;
  */
 public interface IUserDAO {
 
-	public String getUserName();
+	public List<User> getAllUser();
 	
 	public String addUser(User user);
 }

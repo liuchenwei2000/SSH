@@ -30,18 +30,14 @@ public class UserDAOImpl implements IUserDAO {
 	@Resource
 	private SessionFactory sessionFactory;
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public String getUserName() {
+	public List<User> getAllUser() {
 		Query query = getSession().createQuery("from User");
 		
 		List<User> users = query.list();
 		
-		StringBuilder sb = new StringBuilder();
-		for (User user : users) {
-			sb.append(user.getName());
-			sb.append("<p>");
-		}
-		return sb.toString();
+		return users;
 	}
 
 	@Override
