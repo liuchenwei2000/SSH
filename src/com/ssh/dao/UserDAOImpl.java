@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,6 +27,8 @@ import com.ssh.vo.User;
  */
 @Repository
 public class UserDAOImpl implements IUserDAO {
+	
+	private static Logger logger = Logger.getLogger(UserDAOImpl.class);
 
 	@Resource
 	private SessionFactory sessionFactory;
@@ -33,6 +36,7 @@ public class UserDAOImpl implements IUserDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUser() {
+		logger.debug("Enter com.ssh.dao.UserDAOImpl.getAllUser()...");
 		Query query = getSession().createQuery("from User");
 		
 		List<User> users = query.list();
@@ -42,7 +46,9 @@ public class UserDAOImpl implements IUserDAO {
 
 	@Override
 	public String addUser(User user) {
+		logger.debug("Enter com.ssh.dao.UserDAOImpl.addUser()...");
 		if (user == null) {
+			logger.error("User cannot be null.");
 			throw new IllegalArgumentException("User cannot be null.");
 		}
 		user.setId(IDGenerator.gen36());

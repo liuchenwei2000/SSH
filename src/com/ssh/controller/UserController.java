@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssh.service.IUserService;
+import com.ssh.util.StringUtil;
 import com.ssh.vo.User;
 
 /**
@@ -40,6 +41,9 @@ public class UserController {
 
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
 	public ModelAndView add(@RequestParam("code") String code, @RequestParam("name") String name) {
+		if(StringUtil.isEmpty(code) || StringUtil.isEmpty(name)){
+			throw new IllegalArgumentException("code or name cannot be null");
+		}
 		User user = new User(code, name);
 
 		ModelAndView mv = new ModelAndView("success");
