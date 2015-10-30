@@ -7,16 +7,16 @@
 	<table border="1">
 		<thead>
 			<tr>
-				<th>ID</th>
 				<th>Code</th>
 				<th>Name</th>
+				<th>Operation</th>
 			</tr>
 		</thead>
 		<#list users as user>  
 			<tr>
-				<td>${user.id}</td>
 				<td>${user.code}</td>
 				<td>${user.name}</td>
+				<td><a href="user/delete/${user.id}">delete</a></td>
 			</tr>
 		</#list>  
 	</table>

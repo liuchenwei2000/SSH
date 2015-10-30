@@ -55,6 +55,13 @@ public class UserDAOImpl implements IUserDAO {
 		String id = (String) getSession().save(user);
 		return "id:" + id;
 	}
+	
+	public void deleteUser(String userid) {
+		Object user = getSession().load(User.class, userid);
+		if (user != null) {
+			getSession().delete(user);
+		}
+	}
 
 	private Session getSession() {
 		return sessionFactory.getCurrentSession();

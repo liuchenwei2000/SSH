@@ -21,4 +21,6 @@ public interface IUserDAO {
 	public List<User> getAllUser();
 	
 	public String addUser(User user);
+	
+	public void deleteUser(String userid);
 }

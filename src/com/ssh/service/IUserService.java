@@ -21,4 +21,6 @@ public interface IUserService {
 	public List<User> getAllUser();
 	
 	public String addNewUser(User user);
+	
+	public void deleteUser(String userid);
 }

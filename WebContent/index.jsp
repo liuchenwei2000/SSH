@@ -20,6 +20,6 @@
 		<input type="Submit" value="提  交" />
 	</form>
 	<p>
-	<a href="freemarker/index">Test FreeMarker</a>
+	<a href="freemarker">Test FreeMarker</a>
 </body>
 </html>
