@@ -5,6 +5,7 @@ package com.ssh.controller;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,8 @@ import com.ssh.vo.User;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	private static Logger logger = Logger.getLogger(UserController.class);
 
 	@Resource
 	private IUserService userService;
@@ -42,6 +45,7 @@ public class UserController {
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
 	public ModelAndView add(@RequestParam("code") String code, @RequestParam("name") String name) {
 		if(StringUtil.isEmpty(code) || StringUtil.isEmpty(name)){
+			logger.error("code or name cannot be null");
 			throw new IllegalArgumentException("code or name cannot be null");
 		}
 		User user = new User(code, name);
