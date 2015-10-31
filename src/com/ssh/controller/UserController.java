@@ -44,13 +44,11 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
-	public ModelAndView add(@RequestParam("code") String code, @RequestParam("name") String name) {
-		if(StringUtil.isEmpty(code) || StringUtil.isEmpty(name)){
+	public ModelAndView add(User user) {
+		if(StringUtil.isEmpty(user.getCode()) || StringUtil.isEmpty(user.getName())){
 			logger.error("code or name cannot be null");
 			throw new IllegalArgumentException("code or name cannot be null");
 		}
-		User user = new User(code, name);
-
 		ModelAndView mv = new ModelAndView("success");
 		mv.addObject("id", userService.addNewUser(user));
 		return mv;
