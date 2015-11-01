@@ -24,7 +24,7 @@
 			<tr>
 				<td>${user.code}</td>
 				<td>${user.name}</td>
-				<td><a href="user/delete/${user.id}">delete</a></td>
+				<td align="center"><a href="user/delete/${user.id}"><img src="images/remove.png"></a></td>
 			</tr>
 		</c:forEach>
 	</table>

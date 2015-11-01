@@ -12,6 +12,9 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	 
   	<context:component-scan base-package="com.ssh.controller" />
+  	
+  	<mvc:annotation-driven />
+  	<mvc:resources mapping="/images/**" location="/images/"/>
 	
 	<!-- 配置JSP视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
