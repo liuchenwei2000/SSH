@@ -15,6 +15,13 @@
   	
   	<mvc:annotation-driven />
   	<mvc:resources mapping="/images/**" location="/images/"/>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.ssh.interceptor.BaseUrlInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	<!-- 配置JSP视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
