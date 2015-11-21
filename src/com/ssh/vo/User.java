@@ -12,9 +12,9 @@ import javax.persistence.Table;
  * <p>
  * 
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê10ÔÂ24ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´10æœˆ24æ—¥
  */
 @Entity
 @Table(name="tb_user")

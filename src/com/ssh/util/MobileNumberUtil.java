@@ -13,9 +13,9 @@ import java.util.regex.Pattern;
  * <p>
  * 
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º20"15Äê10ÔÂ29ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š20"15å¹´10æœˆ29æ—¥
  */
 public class MobileNumberUtil {
 	
@@ -51,7 +51,7 @@ public class MobileNumberUtil {
 		}else if (NO_CT.contains(no)) {
 			return OPERATOR_CT;
 		}
-		throw new IllegalArgumentException(mobile + " ºÅÂëÓĞÎó");
+		throw new IllegalArgumentException(mobile + " å·ç æœ‰è¯¯");
 	}
 
 	public static void main(String[] args) {
